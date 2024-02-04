@@ -1,0 +1,14 @@
+function Block-WLAN {
+    $headers = @{
+        "Content-Type" = "application/json"
+        "Authorization" = "Token himom8675309"
+    }
+
+    $body = @{
+        "block_blacklist_clients" = $true
+    } | ConvertTo-Json
+
+    Invoke-WebRequest -Method Put -Uri "https://api.ac2.mist.com/api/v1/sites/d4cdbc76-6575-43f1-91cc-1d4b8d6e40b5/wlans/605a49f1-a62b-4c54-91fe-1185a04fbf62" -Headers $headers -Body $body
+}
+
+Set-Alias -Name block1 -Value Block-WLAN
