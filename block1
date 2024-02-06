@@ -12,3 +12,8 @@ function Block-WLAN {
 }
 
 Set-Alias -Name block1 -Value Block-WLAN
+
+# In order for this to work, you need to create a local powershell profile: New-Item -Type file -Force $profile
+# Edit the newly created profile with a text editor. Add the function (in this case Block-WLAN) and also the Set-Alias part
+# Lastly in order for this to run you need to set the powershell execution policy by opening powershell: 
+# as admin and running: Set-ExecutionPolicy RemoteSigned
